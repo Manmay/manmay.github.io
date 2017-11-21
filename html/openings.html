@@ -1,0 +1,62 @@
+<div id="search" class="container-fluid" ng-controller="CareerCtrl">
+   
+    <div class="row" >
+        <div class="col-md-12 text-center">
+            <h1 class="header-text-md" style="text-transform: uppercase; letter-spacing: 1px;">Choose A Profile That Best Fits You</h1>
+            <h4>We will reach you there.</h4>
+            <br>
+        </div>
+    </div>
+
+    <div class="row" >
+
+        <div ng-repeat="profile in profiles" class="col-xs-12 col-sm-12  col-md-3" style="padding-top: 10px; padding-bottom: 10px;">
+            <div >
+                
+                <div ng-if="profile.mode == 'default'" class="card">
+                    <img width="100%" height="150" ng-src="{{profile.image}}">
+                    <h3> {{profile.name}}</h3>
+                    <div style="height: 80px; padding: 5px;">
+                        <h6> {{profile.description}}</h6>
+                    </div>
+                    <div style="padding-bottom: 20px;">
+                      <a class="btn btn-info btn-sm" ng-click="apply($index)">APPLY NOW</a>
+                    </div>
+                </div>
+                
+                <form role="form"  ng-if="profile.mode == 'apply'" class="card">
+                    <div class=" text-left">
+                        <button class="btn btn-link" ng-click="reset($index)">&#x2613;</button>
+                    </div>
+                    <div style="height: 40px;">
+                    </div>
+                    <div class="text-center">
+                        <span class="btn btn-default btn-file">
+                            <img src="img/resume.png" width="100" ng-if="profile.resume">
+                            <img src="img/upload.png" width="100" ng-if="!profile.resume">
+                            <input ng-file-model="profile.resume" type="file" required>
+                            <br>
+                            <span ng-if="!profile.resume">UPLOAD RESUME</span>
+                            <span ng-if="profile.resume">CHANGE RESUME</span>
+                        </span>
+                    </div>
+                    <div style="height: 78px;">
+                    </div>
+                    <div class="form-group" style="padding-bottom: 5px;">
+                        <button  class="btn btn-info btn-sm" ng-click="uploadResume($index)">SEND NOW</button>
+                    </div>
+                </form>
+                
+                <div ng-if="profile.mode == 'applied'" style="padding-top: 50px; padding-bottom: 102px;" class="card">
+                    <h3>Thank You</h3>
+                    <br>
+                    <h6>We received your resume and it is sent for review. We will revert back to you very soon. Keep watching your inbox.</h6>
+                    <br>
+                    <h4>trikwetra</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+<div class="container-fluid" style="padding-top: 100px;" ng-init="init()">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="img/review-resume.png" width="300px;" style="padding-top: 50px; padding-bottom: 50px;">
+        </div>
+        <div class="col-md-4" >
+            <div style="text-align: center; padding-top: 100px; padding-bottom: 100px;" ng-if="mode=='reviewed'">
+                <h3>Thanks You</h3>
+                <h4>Applicant Created Successfully</h4>
+                <h5><a ng-href="#/">Preview Applicant</a></h5>
+            </div>
+
+            <form role="form"name="form" ng-if="mode!='reviewed'">
+                <div class="form-group">
+                    <h3>Review Resume :</h3>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="text" placeholder="Category" class="form-control" ng-model="profile" disabled >
+                </div>
+                <div class="form-group">
+                    <a ng-href="/api/career/resume/{{resumeId}}"  target="_blank" class="btn btn-warning form-control">Download</a>
+                </div>
+                <div class="form-group">
+                    <input ng-model="applicant.email" type="email" placeholder="Email" class="form-control" required>
+                </div >
+                <div class="form-group">
+                    <input ng-model="applicant.fullName" type="text" placeholder="Full Name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <input ng-model="applicant.phone" type="number" placeholder="Phone" class="form-control" required>
+                </div>
+                <div ng-if="error">
+                    <span style="color: red;">Technical Error : Please Contact Admin. </span>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <button class="btn btn-success form-control" ng-click="createApplicant(form)">Accept</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

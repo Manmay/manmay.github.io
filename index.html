@@ -1,6 +1,61 @@
-<html>
-  <body>
-    <h1>Manmay Mohanty</h1>
-    <a href='resume.html'>Resume</a>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>trikwetra</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="trikwetra">
+    <meta name="description" content="trikwetra">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.4/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="app">
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">
+                    <span class="logo-small">trikw<span>e</span>tra</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                     <li><a href="#career">CAREER</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ng-include src="'html/banner.html'"></ng-include>
+
+    <ng-include src="'html/about.html'"></ng-include>
+
+    <ng-include src="'html/inspiration.html'"></ng-include>
+
+    <ng-include src="'html/career.html'" ></ng-include>
+
+    <ng-include src="'html/openings.html'"></ng-include>
+
+    <ng-include src="'html/subscribe.html'"></ng-include>
+
+    <ng-include src="'html/contact.html'"></ng-include>
+
+    <script src="lib/jquery-1.12.2/jquery.min.js"></script>
+    <script src="lib/bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular-1.5.3/angular.min.js"></script>
+    <script src="lib/angular-1.5.3/ng-file-model.js"></script>
+    <script src="js/index.js"></script>
+
+
+
+</body>
 </html>
